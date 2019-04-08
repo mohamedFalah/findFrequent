@@ -1,7 +1,5 @@
 import math
 
-
-
 class FindFrequent: 
    
 
@@ -27,8 +25,7 @@ class FindFrequent:
 
     #find the frequent of the value more than 1  
     def findTheFrequentOfJoinItems(self, valueSet,items):
-            frequent = {}
-            
+            frequent = {}         
             there = []
 
             for value in valueSet: 
@@ -70,14 +67,13 @@ class FindFrequent:
 
     # a b c d
     #ab ac ad  bc bd cd 
-    #get the join of frequent
+    #get the join of frequent pproblem in join more than 2 elements duplicates
     def joinItems(self, valueSet):
         newValueSet = []
         for value in valueSet:
             for value2 in valueSet:
                 if(value != value2):
                     newValue = [value,value2]
-                    newValueSet.append(newValue)
         return newValueSet
 
     #filter the join set to remove similar sets joins
@@ -134,16 +130,12 @@ while i <=  len(OriginalItems):
     frequent = findfrequent.findTheFrequentOfJoinItems(valueSet,items)
     print(frequent)
     
-
-    if(len(freqeunt[]) == len(OriginalItems)):
-        getLengthOfValue = len(valueSet[0])
-    print(getLengthOfValue)
-
     valueSet = findfrequent.deleteNonFrequentItems(frequent, thrshold)
     frequentList.append(valueSet)
     print('list of frequence items')
     print(frequentList)
 
+    #there is no break point 
     if(getLengthOfValue == len(OriginalItems)):
        break
     i = i + 1
